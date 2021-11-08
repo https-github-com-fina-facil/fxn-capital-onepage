@@ -1,0 +1,58 @@
+header {
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding-top: 6.3rem;
+    transition: all .3s;
+    z-index: 2;
+    .container {
+        @include flex(row, center, space-between);
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        p {
+            font: 600 1.4rem/1.7rem $title-font;
+            color: $black;
+            margin-right: 4rem;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            a {
+                &:not(:last-child) {
+                    margin-right: 2.4rem;
+                }
+                .fab {
+                    color: $blue;
+                    font-size: 1.5rem;
+                    transition: color .3s;
+                }
+
+                &:hover {
+                    .fab {
+                        color: $blue-dark;
+                    }
+                }
+            }
+        }
+    }
+    &.float-header {
+        background: $white;
+        border-bottom: 1px solid $blue;
+        padding: 1.4rem 0;
+    }
+
+    @include responsive(480px) {
+        padding-top: 2rem;
+        .social {
+            p {
+                display: none;
+            }
+        }
+    }
+}
